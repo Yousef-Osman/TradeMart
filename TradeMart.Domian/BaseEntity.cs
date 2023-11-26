@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
 namespace TradeMart.Domian;
-internal class BaseEntity
+public class BaseEntity
 {
     public BaseEntity()
     {

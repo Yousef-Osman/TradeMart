@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
 namespace TradeMart.Domian.Entities;
-internal class Category: BaseEntity
+public class Category: BaseEntity
 {
     [Required, StringLength(100)]
     public string Name { get; set; }

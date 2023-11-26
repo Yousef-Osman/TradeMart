@@ -1,5 +1,5 @@
 ﻿namespace TradeMart.Domian.Entities;
-internal class ProductCategory
+public class ProductCategory
 {
     public string ProductId { get; set; }
     public string CategoryId { get; set; }
