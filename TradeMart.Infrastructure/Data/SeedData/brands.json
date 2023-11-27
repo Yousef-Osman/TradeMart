@@ -1,0 +1,74 @@
+﻿[
+  {
+    "Id": "eb8a69fe-c82d-494a-a869-eab5ba6e9751",
+    "Name": "Lenovo",
+    "Description": "Lenovo",
+    "ImageUrl": "images/site/brands/lenovo.png"
+  },
+  {
+    "Id": "c3bbd252-5348-4da9-9cca-b117bdefbd6d",
+    "Name": "Dell",
+    "Description": "Dell",
+    "ImageUrl": "images/site/brands/dell.png"
+  },
+  {
+    "Id": "2145a42d-9172-4711-8dd6-82f859f3f360",
+    "Name": "HP",
+    "Description": "HP",
+    "ImageUrl": "images/site/brands/hp.png"
+  },
+  {
+    "Id": "ca675a3a-dcd4-4d44-b2a6-289f6640b998",
+    "Name": "Toshiba",
+    "Description": "Toshiba",
+    "ImageUrl": "images/site/brands/toshiba.png"
+  },
+  {
+    "Id": "2818ae0f-82b7-4ad7-aa58-b1dc79d30c7d",
+    "Name": "Asus",
+    "Description": "Asus",
+    "ImageUrl": "images/site/brands/asus.png"
+  },
+  {
+    "Id": "0ffe58b5-8d6c-4bbd-a5e8-1207db245706",
+    "Name": "Apple",
+    "Description": "Apple",
+    "ImageUrl": "images/site/brands/apple.png"
+  },
+  {
+    "Id": "d07b56a4-e703-4c33-ae6b-451878782f98",
+    "Name": "Fujitsu",
+    "Description": "Fujitsu",
+    "ImageUrl": "images/site/brands/fujitsu.png"
+  },
+  {
+    "Id": "a761bf21-b497-4519-8c49-1a3755354e44",
+    "Name": "Samsung",
+    "Description": "Samsung",
+    "ImageUrl": "images/site/brands/samsung.png"
+  },
+  {
+    "Id": "ddb92f59-dc38-4aac-820f-bbe4b0954994",
+    "Name": "Acer",
+    "Description": "Acer",
+    "ImageUrl": "images/site/brands/acer.png"
+  },
+  {
+    "Id": "6c3735d1-26c6-431d-a876-4e74ff15f0ee",
+    "Name": "Canon",
+    "Description": "Canon",
+    "ImageUrl": "images/site/brands/canon.png"
+  },
+  {
+    "Id": "9cbab34c-f29d-4c7b-8f08-eb1d00c0b00b",
+    "Name": "Sony",
+    "Description": "Sony",
+    "ImageUrl": "images/site/brands/sony.png"
+  },
+  {
+    "Id": "0321df7a-173e-426b-b843-e8cfddfc270e",
+    "Name": "Xiaomi",
+    "Description": "Xiaomi",
+    "ImageUrl": "images/site/brands/xiaomi.png"
+  }
+]

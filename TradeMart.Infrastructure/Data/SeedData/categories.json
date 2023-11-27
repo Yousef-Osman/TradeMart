@@ -1,0 +1,62 @@
+﻿[
+  {
+    "Id": "7640d113-0575-42fe-aebb-b80b5c653b00",
+    "Name": "PC",
+    "Description": "PC",
+    "ImageUrl": "images/site/categories/pc.png"
+  },
+  {
+    "Id": "0ec05537-a44c-417a-9475-1a667a90bb9b",
+    "Name": "Laptop",
+    "Description": "Laptop",
+    "ImageUrl": "images/site/categories/laptop.png"
+  },
+  {
+    "Id": "38c865e3-08b4-47f1-921f-d3d6f5b1d635",
+    "Name": "Televisions",
+    "Description": "Televisions",
+    "ImageUrl": "images/site/categories/tv.png"
+  },
+  {
+    "Id": "43c5a180-341a-4509-9b4e-2aad54d41de6",
+    "Name": "Cell Phones",
+    "Description": "Cell Phones",
+    "ImageUrl": "images/site/categories/phone.png"
+  },
+  {
+    "Id": "bd36b20c-4645-452a-94b8-f3efdf46b0ed",
+    "Name": "Digital Cameras",
+    "Description": "Digital Cameras",
+    "ImageUrl": "images/site/categories/camera.png"
+  },
+  {
+    "Id": "07ca5747-2b26-4cd2-ba2d-a9f8c012a001",
+    "Name": "Tablets",
+    "Description": "Tablets",
+    "ImageUrl": "images/site/categories/tablet.png"
+  },
+  {
+    "Id": "9594c7a5-7110-4c9e-8288-9e537419fb68",
+    "Name": "Headphones",
+    "Description": "Headphones",
+    "ImageUrl": "images/site/categories/headphone.png"
+  },
+  {
+    "Id": "19042c2d-c3ed-410f-8c2a-e312303c546f",
+    "Name": "Playstration",
+    "Description": "Playstration",
+    "ImageUrl": "images/site/categories/playstration.png"
+  },
+  {
+    "Id": "61798f0a-3ff3-4ef5-8f6e-4816e0170a37",
+    "Name": "Smart Watches",
+    "Description": "Smart Watches",
+    "ImageUrl": "images/site/categories/watch.png"
+  },
+  {
+    "Id": "6aa87d2c-dcc8-473d-a161-b8af9b77d12f",
+    "Name": "Accessories",
+    "Description": "Accessories",
+    "ImageUrl": "images/site/categories/Accessories.png"
+  }
+]
