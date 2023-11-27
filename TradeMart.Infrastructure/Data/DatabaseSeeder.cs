@@ -1,5 +1,4 @@
-﻿using System.Reflection;
-using System.Text.Json;
+﻿using System.Text.Json;
 using TradeMart.Domian.Entities;
 
 namespace TradeMart.Infrastructure.Data;
