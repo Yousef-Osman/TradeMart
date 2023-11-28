@@ -15,20 +15,30 @@ public class ProductsController : ControllerBase
     private readonly IProductRepository _productRepo;
     private readonly IGenericRepository<Brand> _brandRepo;
     private readonly IGenericRepository<Category> _categoryRepo;
+    private readonly IConfiguration _config;
 
     public ProductsController(IProductRepository productRepo,
                               IGenericRepository<Brand> brandRepo,
-                              IGenericRepository<Category> CategoryRepo)
+                              IGenericRepository<Category> CategoryRepo,
+                              IConfiguration config)
     {
         _productRepo = productRepo;
         _brandRepo = brandRepo;
         _categoryRepo = CategoryRepo;
+        _config = config;
     }
 
     [HttpGet]
     public async Task<IActionResult> GetProducts([FromQuery] ProductParams productParams)
     {
         var pagedResult = await _productRepo.GetProductsAsync(productParams);
+
+        foreach (var product in pagedResult.Data)
+        {
+            if (product.ImageUrl != null)
+                product.ImageUrl = _config["ApiUrl"] + product.ImageUrl;
+        }
+
         return Ok(pagedResult);
     }
 
@@ -39,6 +49,10 @@ public class ProductsController : ControllerBase
     {
         var product = await _productRepo.GetProductAsync(id);
         var productDto = product.ToProductDto();
+
+        if (productDto.ImageUrl != null)
+            productDto.ImageUrl = _config["ApiUrl"] + productDto.ImageUrl;
+
         return Ok(productDto);
     }
 
