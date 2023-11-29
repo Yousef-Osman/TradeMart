@@ -48,12 +48,11 @@ public class ProductsController : ControllerBase
     public async Task<IActionResult> GetProduct(string id)
     {
         var product = await _productRepo.GetProductAsync(id);
-        var productDto = product.ToProductDto();
 
-        if (productDto.ImageUrl != null)
-            productDto.ImageUrl = _config["ApiUrl"] + productDto.ImageUrl;
+        if (product.ImageUrl != null)
+            product.ImageUrl = _config["ApiUrl"] + product.ImageUrl;
 
-        return Ok(productDto);
+        return Ok(product);
     }
 
     [HttpGet("brands")]

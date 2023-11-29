@@ -18,14 +18,15 @@ public class ProductRepository : GenericRepository<Product>, IProductRepository
         _context = context;
     }
 
-    public IQueryable<Product> GetProductDataQuery([Optional] string userId)
+    public async Task<ProductDTO> GetProductAsync(string id)
     {
-        return _context.Products
-            .Where(a => string.IsNullOrEmpty(userId) ? true : a.VendorId == userId)
+        return await _context.Products
             .Include(a => a.Brand)
             .Include(a => a.Categories)
             .ThenInclude(b => b.Category)
-            .AsNoTracking();
+            .AsNoTracking()
+            .Select(a => a.ToProductDto())
+            .FirstOrDefaultAsync(a => a.Id == id);
     }
 
     public async Task<PagedResult<ProductDTO>> GetProductsAsync(ProductParams productParams)
@@ -33,7 +34,7 @@ public class ProductRepository : GenericRepository<Product>, IProductRepository
         var query = _context.Products
             .Sort(productParams.OrderBy)
             .Search(productParams.SearchValue)
-            .Filter(productParams.Brands, productParams.CategoryId)
+            .Filter(productParams.Brands, productParams.CategoryId, productParams.VendorId)
             .Include(a => a.Brand)
             .Include(a => a.Categories)
             .ThenInclude(b => b.Category)
@@ -42,15 +43,5 @@ public class ProductRepository : GenericRepository<Product>, IProductRepository
             .Select(a => a.ToProductDto());
 
         return await PagedResult<ProductDTO>.ToPagedListAsync(query, productParams.PageNumber, productParams.PageSize);
-    }
-
-    public async Task<Product> GetProductAsync(string id)
-    {
-        return await _context.Products
-            .Include(a => a.Brand)
-            .Include(a => a.Categories)
-            .ThenInclude(b => b.Category)
-            .AsNoTracking()
-            .FirstOrDefaultAsync(a => a.Id == id);
     }
 }

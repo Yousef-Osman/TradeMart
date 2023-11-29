@@ -4,5 +4,6 @@ public class ProductParams : PaginationParams
     public string OrderBy { get; set; }
     public string SearchValue { get; set; }
     public string CategoryId { get; set; }
+    public string VendorId { get; set; }
     public List<string> Brands { get; set; }
 }

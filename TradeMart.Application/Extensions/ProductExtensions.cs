@@ -27,10 +27,13 @@ public static class ProductExtensions
         return query.Where(a => a.Name.ToLower().Contains(searchValue));
     }
 
-    public static IQueryable<Product> Filter(this IQueryable<Product> query, List<string> brands, string categoryId)
+    public static IQueryable<Product> Filter(this IQueryable<Product> query, List<string> brands, string categoryId, string vendorId)
     {
         if (brands != null && brands.Count > 0)
             query = query.Where(a => brands.Contains(a.Brand.Id));
+
+        if (!string.IsNullOrWhiteSpace(vendorId))
+            query = query.Where(a => a.VendorId == vendorId);
 
         if (!string.IsNullOrWhiteSpace(categoryId))
             query = query.Where(a => a.Id == a.Categories.Where(b=>b.CategoryId == categoryId).Select(b=>b.ProductId).FirstOrDefault());
