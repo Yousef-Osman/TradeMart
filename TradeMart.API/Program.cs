@@ -1,6 +1,10 @@
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Net;
+using TradeMart.API.Middlewares;
 using TradeMart.Application.Interfaces.Repositories;
+using TradeMart.Application.Models.Responses;
 using TradeMart.Infrastructure.Data;
 using TradeMart.Infrastructure.Repositories;
 
@@ -24,7 +28,27 @@ builder.Services.AddCors(options => options.AddPolicy("CorsPolicy", policy => po
     .AllowAnyHeader()
     .AllowAnyMethod()));
 
+//to override api response for validation and use the class instead
+builder.Services.Configure<ApiBehaviorOptions>(options =>
+{
+    options.InvalidModelStateResponseFactory = actionContext =>
+    {
+        var errors = actionContext.ModelState
+        .Where(e => e.Value.Errors.Count > 0)
+        .SelectMany(x => x.Value.Errors)
+        .Select(x => x.ErrorMessage).ToList();
+
+        return new BadRequestObjectResult(new ErrorResponse(statusCode: (int)HttpStatusCode.BadRequest, errors: errors));
+    };
+});
+
 var app = builder.Build();
+
+//Global Exception handling Middleware
+app.UseMiddleware<ExceptionMiddleware>();
+
+//To handle "Not Found Endpoint" redirect to "ErrorController" and pass status code {0}
+app.UseStatusCodePagesWithReExecute("/errors/{0}");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
