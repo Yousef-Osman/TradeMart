@@ -1,8 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using TradeMart.Application.DTOs;
+﻿using Microsoft.AspNetCore.Mvc;
 using TradeMart.Application.Interfaces.Repositories;
-using TradeMart.Application.Mappers;
 using TradeMart.Application.Models.Pagination;
 using TradeMart.Domian.Entities;
 

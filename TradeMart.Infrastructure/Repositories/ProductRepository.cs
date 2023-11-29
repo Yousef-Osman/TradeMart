@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System.Runtime.InteropServices;
 using TradeMart.Application.DTOs;
 using TradeMart.Application.Interfaces.Repositories;
 using TradeMart.Application.Models.Pagination;

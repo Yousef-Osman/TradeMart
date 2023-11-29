@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TradeMart.Application.DTOs;
+﻿namespace TradeMart.Application.DTOs;
 public class ProductDTO
 {
     public string Id { get; set; }
