@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './_home/home.component';
 import { NotFoundComponent } from './_core/components/not-found/not-found.component';
+import { HomeComponent } from './_core/components/home/home.component';
 
 const routes: Routes = [
   { path: 'shop', loadChildren: () => import('./_shop/shop.module').then(mod => mod.ShopModule) },
