@@ -1,9 +1,161 @@
-<div class="container-fluid col-12 col-lg-11 pt-5">
-  <h5>This is the Shop Page with Bootstrap</h5>
-  <i class="fa-solid fa-star text-primary"></i>
-  <i class="fa-solid fa-star text-primary"></i>
-  <i class="fa-solid fa-star text-primary"></i>
-  <i class="fa-solid fa-star text-primary"></i>
-  <i class="fa-solid fa-star text-primary"></i>
-  <i class="fa-solid fa-star text-primary"></i>
-</div>
+<section class="bg-light py-5">
+  <div class="container-fluid col-12 col-lg-11">
+
+    <div class="row">
+      <!-- sidebar filters -->
+      <aside class="col-12 col-md-3" style="max-width: 20%;">
+        <div id="aside_filter" class="collapse card d-lg-block mb-5">
+          <ng-container>
+
+            <article class="filter-group">
+              <header class="card-header">
+                <a class="text-dark text text-decoration-none fw-bold" data-bs-toggle="collapse"
+                  data-bs-target="#collapse_aside1" aria-expanded="true">
+                  <i class="icon-control fa fa-chevron-down"></i> Categories
+                </a>
+              </header>
+              <div class="collapse show " id="collapse_aside1">
+                <div class="card-body p-2">
+                  <div class="list-group rounded-0">
+                    <a class="list-group-item list-group-item-action rounded-1 border-0">PC</a>
+                    <a class="list-group-item list-group-item-action rounded-1 border-0">Laptop</a>
+                    <a class="list-group-item list-group-item-action rounded-1 border-0">PlayStation</a>
+                    <a class="list-group-item list-group-item-action rounded-1 border-0">Mobile</a>
+                    <a class="list-group-item list-group-item-action rounded-1 border-0">Watch</a>
+                    <a class="list-group-item list-group-item-action rounded-1 border-0">Accessories</a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="filter-group">
+              <header class="card-header">
+                <a class="text-dark text text-decoration-none fw-bold" data-bs-toggle="collapse"
+                  data-bs-target="#collapse_aside_brands">
+                  <i class="icon-control fa fa-chevron-down"></i> Brands
+                </a>
+              </header>
+              <div class="collapse show" id="collapse_aside_brands">
+                <div class="card-body">
+                  <label class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox">
+                    <span class="form-check-label link-label">Lenovo</span>
+                    <b class="badge rounded-pill bg-gray-dark float-end">{{120}}</b>
+                  </label>
+                  <label class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox">
+                    <span class="form-check-label link-label">Dell</span>
+                    <b class="badge rounded-pill bg-gray-dark float-end">{{120}}</b>
+                  </label>
+                  <label class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox">
+                    <span class="form-check-label link-label">Apple</span>
+                    <b class="badge rounded-pill bg-gray-dark float-end">{{120}}</b>
+                  </label>
+                  <label class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox">
+                    <span class="form-check-label link-label">Samsung</span>
+                    <b class="badge rounded-pill bg-gray-dark float-end">{{120}}</b>
+                  </label>
+                  <label class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox">
+                    <span class="form-check-label link-label">Hp</span>
+                    <b class="badge rounded-pill bg-gray-dark float-end">{{120}}</b>
+                  </label>
+                </div>
+              </div>
+            </article>
+
+            <article class="filter-group">
+              <header class="card-header">
+                <a class="text-dark text text-decoration-none fw-bold" data-bs-toggle="collapse"
+                  data-bs-target="#collapse_aside2">
+                  <i class="icon-control fa fa-chevron-down"></i> Price
+                </a>
+              </header>
+              <div class="collapse show" id="collapse_aside2">
+                <div class="card-body">
+                  <input type="range" class="form-range" min="0" max="100">
+                  <div class="row mb-2">
+                    <div class="col-6">
+                      <label for="min" class="form-label">Min</label>
+                      <input class="form-control form-control-sm" id="min" placeholder="$0" type="number">
+                    </div>
+
+                    <div class="col-6">
+                      <label for="max" class="form-label">Max</label>
+                      <input class="form-control form-control-sm" id="max" placeholder="$1,0000" type="number">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="filter-group">
+              <header class="card-header">
+                <a class="text-dark text text-decoration-none fw-bold" data-bs-toggle="collapse"
+                  data-bs-target="#collapse_aside3">
+                  <i class="icon-control fa fa-chevron-down"></i> Search
+                </a>
+              </header>
+              <div class="collapse show" id="collapse_aside3">
+                <div class="card-body">
+                  <input type="search" class="form-control form-control-sm my-2"
+                    placeholder="Search..." aria-label="Search">
+                </div>
+              </div>
+              <header class="card-header">
+                <button class="btn btn-primary btn-sm w-100 my-2">Apply</button>
+                <button class="btn btn-warning btn-sm w-100 mb-2">Reset</button>
+              </header>
+            </article>
+          </ng-container>
+        </div>
+      </aside>
+
+      <main class="col-lg-9" style="flex-grow: 1">
+        <header class="d-sm-flex justify-content-between align-items-center pb-4">
+          <!-- pagination header -->
+          <!-- <app-pagination-header *ngIf="pagination" [currentPage]="pagination.currentPage"
+            [pageSize]="pagination.pageSize" [totalCount]="pagination.totalCount">
+          </app-pagination-header> -->
+
+          <!-- sort dropdown -->
+          <div class="ms-auto">
+            <select class="form-select form-select-sm d-inline-block w-auto">
+              <option >ALphabit</option>
+              <option >Price Asc</option>
+              <option >Price Desc</option>
+            </select>
+          </div>
+        </header>
+
+        <!-- list of product cards -->
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+          <div *ngFor="let item of products" class="col">
+            <div class="card h-100 shadow-sm">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTnvcKBROrNtX4Xj11FqvbBkUUp4sd_ZGwQLcISLUL9BvAEb2lyw5AF57_XIkMQV07xUU" class="image-fluid p-3 card-image-style border-bottom curser-pointer">
+          
+              <div class="card-body d-flex justify-content-between align-items-start">
+                  <div>
+                      <p class="title mb-1">Product Name Goes Here</p>
+                      <p class="price-text mb-0">{{1530 | currency:'EGP ':'symbol':'1.0-2'}}</p>
+                  </div>
+                  <a class="btn btn-outline-primary btn-sm ">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                  </a>
+              </div>
+          </div>
+          </div>
+        </div>
+        <hr>
+
+        <!-- pagination footer -->
+        <!-- <div class="d-flex justify-content-center align-items-center mt-4">
+          <app-pagination-footer *ngIf="pagination" [pagination]="pagination"
+            (pageNumberEmitter)="onParentPageChanged($event)">
+          </app-pagination-footer>
+        </div> -->
+      </main>
+    </div>
+  </div>
+</section>

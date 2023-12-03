@@ -1,0 +1,36 @@
+.filter-text {
+    font-size: 16px;
+}
+
+.link-label:hover {
+    cursor: pointer;
+    color: #0d6efd !important;
+}
+
+.text-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card-image-style {
+    height: 220px;
+    object-fit: contain;
+}
+
+.price-text {
+    color: #212529;
+    font-weight: 600;
+}
+
+.title {
+    font-weight: 400;
+    font-size: 14px!important;
+    line-height: 20px!important;
+    color: #000000;
+}
+
+.title:hover {
+    cursor: pointer;
+    color: #0d6efd !important;
+}
