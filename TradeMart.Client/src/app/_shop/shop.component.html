@@ -99,8 +99,8 @@
               </header>
               <div class="collapse show" id="collapse_aside3">
                 <div class="card-body">
-                  <input type="search" class="form-control form-control-sm my-2"
-                    placeholder="Search..." aria-label="Search">
+                  <input type="search" class="form-control form-control-sm my-2" placeholder="Search..."
+                    aria-label="Search">
                 </div>
               </div>
               <header class="card-header">
@@ -122,15 +122,86 @@
           <!-- sort dropdown -->
           <div class="ms-auto">
             <select class="form-select form-select-sm d-inline-block w-auto">
-              <option >ALphabit</option>
-              <option >Price Asc</option>
-              <option >Price Desc</option>
+              <option>ALphabit</option>
+              <option>Price Asc</option>
+              <option>Price Desc</option>
             </select>
           </div>
         </header>
+        <!-- <div class="container">
+          <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
+            <div class="col" *ngFor="let product of products">
+              <div class="card d-flex flex-column align-items-center justify-content-center product-item my-3">
+                <div class="product"> 
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTnvcKBROrNtX4Xj11FqvbBkUUp4sd_ZGwQLcISLUL9BvAEb2lyw5AF57_XIkMQV07xUU" alt="">
+                  <ul class="d-flex align-items-center justify-content-center list-unstyled icons">
+                    <li class="icon"><span class="fas fa-expand-arrows-alt"></span></li>
+                    <li class="icon mx-3"><span class="far fa-heart"></span></li>
+                    <li class="icon"><span class="fas fa-shopping-bag"></span></li>
+                  </ul>
+                </div>
+                <div class="card-body p-4">
+                  <div>
+                    <i class="fa-solid fa-star text-warning" style="font-size: small;"></i>
+                    <i class="fa-solid fa-star text-warning" style="font-size: small;"></i>
+                    <i class="fa-solid fa-star text-warning" style="font-size: small;"></i>
+                    <i class="fa-solid fa-star text-warning" style="font-size: small;"></i>
+                    <i class="fa-solid fa-star text-warning" style="font-size: small;"></i>
+                  </div>
+                  <h6>
+                    <a class="stretched-link reset-anchor" href="#!">How To Get More Reviews For Your Startup Product</a>
+                  </h6>
+                  <h6 class="text-danger fw-bold">$ 800.00</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        
+
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
+          <div class="col" *ngFor="let product of products">
+            <div class="card border-0 shadow-sm hover-transition">
+
+              <div class="image position-relative" style="cursor: pointer;">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTnvcKBROrNtX4Xj11FqvbBkUUp4sd_ZGwQLcISLUL9BvAEb2lyw5AF57_XIkMQV07xUU" class="card-img-top img-fluid px-3 pt-3">
+                    <ul class="d-flex align-items-center justify-content-center list-unstyled icons hover-overlay">
+                      <li class="icon"><span class="fas fa-expand-arrows-alt"></span></li>
+                      <li class="icon mx-3"><span class="far fa-heart"></span></li>
+                      <li class="icon"><span class="fas fa-shopping-cart"></span></li>
+                    </ul>
+              </div>
+          
+              
+              <div class="card-body d-flex flex-column p-4">
+                <!-- <p class="text-sm text-muted mb-2">Laptop</p> -->
+                <div>
+                  <div class="pb-2">
+                    <i class="fa-solid fa-star text-warning" style="font-size: small;"></i>
+                    <i class="fa-solid fa-star text-warning" style="font-size: small;"></i>
+                    <i class="fa-solid fa-star text-warning" style="font-size: small;"></i>
+                    <i class="fa-solid fa-star text-warning" style="font-size: small;"></i>
+                    <i class="fa-solid fa-star text-warning" style="font-size: small;"></i>
+                  </div>
+                  <h6><a>How To Get More Reviews For Your Startup Product</a></h6>
+                </div>
+                <h6 class="text-danger fw-bold">$ 800.00</h6>
+                <!-- <span class="text-primary">Read more</span> -->
+              </div>
+              
+          </div>
+
+
+
+
+
+            
+          </div>
+        </div>
 
         <!-- list of product cards -->
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+        <!-- <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
           <div *ngFor="let item of products" class="col">
             <div class="card h-100 shadow-sm">
               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTnvcKBROrNtX4Xj11FqvbBkUUp4sd_ZGwQLcISLUL9BvAEb2lyw5AF57_XIkMQV07xUU" class="image-fluid p-3 card-image-style border-bottom curser-pointer">
@@ -147,7 +218,7 @@
           </div>
           </div>
         </div>
-        <hr>
+        <hr> -->
 
         <!-- pagination footer -->
         <!-- <div class="d-flex justify-content-center align-items-center mt-4">
