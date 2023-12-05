@@ -4,6 +4,7 @@ import { ShopComponent } from './shop.component';
 import { ShopRoutingModule } from './shop-routing.module';
 import { ProductItemComponent } from './product-item/product-item.component';
 import { SidebarFiltersComponent } from './sidebar-filters/sidebar-filters.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -15,7 +16,8 @@ import { SidebarFiltersComponent } from './sidebar-filters/sidebar-filters.compo
   ],
   imports: [
     CommonModule,
-    ShopRoutingModule
+    ShopRoutingModule,
+    FormsModule
   ],
   exports:[
     ShopComponent

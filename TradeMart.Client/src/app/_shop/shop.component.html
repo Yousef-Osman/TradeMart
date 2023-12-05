@@ -26,7 +26,7 @@
         <!-- list of product cards -->
         <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
           <div class="col" *ngFor="let product of products">
-            <app-product-item></app-product-item>
+            <app-product-item [product]="product"></app-product-item>
           </div>
         </div>
 
