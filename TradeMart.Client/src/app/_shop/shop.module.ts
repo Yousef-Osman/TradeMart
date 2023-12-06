@@ -5,7 +5,7 @@ import { ShopRoutingModule } from './shop-routing.module';
 import { ProductItemComponent } from './product-item/product-item.component';
 import { SidebarFiltersComponent } from './sidebar-filters/sidebar-filters.component';
 import { FormsModule } from '@angular/forms';
-
+import { SharedModule } from '../_shared/shared.module';
 
 
 @NgModule({
@@ -17,7 +17,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     ShopRoutingModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ],
   exports:[
     ShopComponent

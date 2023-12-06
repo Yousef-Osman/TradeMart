@@ -1,106 +1,85 @@
-<div id="aside_filter" class="collapse card d-lg-block mb-5">
-    <ng-container>
-
-      <article class="filter-group">
-        <header class="card-header">
-          <a class="text-dark text text-decoration-none fw-bold" data-bs-toggle="collapse"
-            data-bs-target="#collapse_aside1" aria-expanded="true">
-            <i class="icon-control fa fa-chevron-down"></i> Categories
-          </a>
-        </header>
-        <div class="collapse show " id="collapse_aside1">
-          <div class="card-body p-2">
-            <div class="list-group rounded-0">
-              <a class="list-group-item list-group-item-action rounded-1 border-0">PC</a>
-              <a class="list-group-item list-group-item-action rounded-1 border-0">Laptop</a>
-              <a class="list-group-item list-group-item-action rounded-1 border-0">PlayStation</a>
-              <a class="list-group-item list-group-item-action rounded-1 border-0">Mobile</a>
-              <a class="list-group-item list-group-item-action rounded-1 border-0">Watch</a>
-              <a class="list-group-item list-group-item-action rounded-1 border-0">Accessories</a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <article class="filter-group">
-        <header class="card-header">
-          <a class="text-dark text text-decoration-none fw-bold" data-bs-toggle="collapse"
-            data-bs-target="#collapse_aside_brands">
-            <i class="icon-control fa fa-chevron-down"></i> Brands
-          </a>
-        </header>
-        <div class="collapse show" id="collapse_aside_brands">
-          <div class="card-body">
-            <label class="form-check mb-2">
-              <input class="form-check-input" type="checkbox">
-              <span class="form-check-label link-label">Lenovo</span>
-              <b class="badge rounded-pill bg-gray-dark float-end">{{120}}</b>
-            </label>
-            <label class="form-check mb-2">
-              <input class="form-check-input" type="checkbox">
-              <span class="form-check-label link-label">Dell</span>
-              <b class="badge rounded-pill bg-gray-dark float-end">{{120}}</b>
-            </label>
-            <label class="form-check mb-2">
-              <input class="form-check-input" type="checkbox">
-              <span class="form-check-label link-label">Apple</span>
-              <b class="badge rounded-pill bg-gray-dark float-end">{{120}}</b>
-            </label>
-            <label class="form-check mb-2">
-              <input class="form-check-input" type="checkbox">
-              <span class="form-check-label link-label">Samsung</span>
-              <b class="badge rounded-pill bg-gray-dark float-end">{{120}}</b>
-            </label>
-            <label class="form-check mb-2">
-              <input class="form-check-input" type="checkbox">
-              <span class="form-check-label link-label">Hp</span>
-              <b class="badge rounded-pill bg-gray-dark float-end">{{120}}</b>
-            </label>
-          </div>
-        </div>
-      </article>
-
-      <article class="filter-group">
-        <header class="card-header">
-          <a class="text-dark text text-decoration-none fw-bold" data-bs-toggle="collapse"
-            data-bs-target="#collapse_aside2">
-            <i class="icon-control fa fa-chevron-down"></i> Price
-          </a>
-        </header>
-        <div class="collapse show" id="collapse_aside2">
-          <div class="card-body">
-            <input type="range" class="form-range" min="0" max="100">
-            <div class="row mb-2">
-              <div class="col-6">
-                <label for="min" class="form-label">Min</label>
-                <input class="form-control form-control-sm" id="min" placeholder="$0" type="number">
-              </div>
-
-              <div class="col-6">
-                <label for="max" class="form-label">Max</label>
-                <input class="form-control form-control-sm" id="max" placeholder="$1,0000" type="number">
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-      <article class="filter-group">
-        <header class="card-header">
-          <a class="text-dark text text-decoration-none fw-bold" data-bs-toggle="collapse"
-            data-bs-target="#collapse_aside3">
-            <i class="icon-control fa fa-chevron-down"></i> Search
-          </a>
-        </header>
-        <div class="collapse show" id="collapse_aside3">
-          <div class="card-body">
-            <input type="search" class="form-control form-control-sm my-2" placeholder="Search..."
-              aria-label="Search">
-          </div>
-        </div>
-        <header class="card-header">
-          <button class="btn btn-primary btn-sm w-100 my-2">Apply</button>
-          <button class="btn btn-warning btn-sm w-100 mb-2">Reset</button>
-        </header>
-      </article>
-    </ng-container>
+<div class="card border-0 shadow-sm mb-4">
+  <div class="card-header bg-light border-0 px-4 py-3">
+    <h6 class="mb-0">Categories</h6>
   </div>
+  <div class="card-body px-4 py-3">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-action rounded-1 border-0">PC</li>
+      <li class="list-group-item list-group-item-action rounded-1 border-0">Laptop</li>
+      <li class="list-group-item list-group-item-action rounded-1 border-0">PlayStation</li>
+      <li class="list-group-item list-group-item-action rounded-1 border-0">Mobile</li>
+      <li class="list-group-item list-group-item-action rounded-1 border-0">Watch</li>
+      <li class="list-group-item list-group-item-action rounded-1 border-0">Accessories</li>
+    </ul>
+  </div>
+</div>
+
+<div class="card border-0 shadow-sm mb-4">
+  <div class="card-header bg-light border-0 px-4 py-3">
+    <h6 class="mb-0">Brands</h6>
+  </div>
+  <div class="card-body px-4 py-3">
+    <label class="form-check mb-2">
+      <input class="form-check-input" type="checkbox">
+      <span class="form-check-label link-label">Lenovo</span>
+      <b class="badge rounded-pill bg-gray-dark float-end">{{120}}</b>
+    </label>
+    <label class="form-check mb-2">
+      <input class="form-check-input" type="checkbox">
+      <span class="form-check-label link-label">Dell</span>
+      <b class="badge rounded-pill bg-gray-dark float-end">{{120}}</b>
+    </label>
+    <label class="form-check mb-2">
+      <input class="form-check-input" type="checkbox">
+      <span class="form-check-label link-label">Apple</span>
+      <b class="badge rounded-pill bg-gray-dark float-end">{{120}}</b>
+    </label>
+    <label class="form-check mb-2">
+      <input class="form-check-input" type="checkbox">
+      <span class="form-check-label link-label">Samsung</span>
+      <b class="badge rounded-pill bg-gray-dark float-end">{{120}}</b>
+    </label>
+    <label class="form-check mb-2">
+      <input class="form-check-input" type="checkbox">
+      <span class="form-check-label link-label">Hp</span>
+      <b class="badge rounded-pill bg-gray-dark float-end">{{120}}</b>
+    </label>
+  </div>
+</div>
+
+<div class="card border-0 shadow-sm mb-4">
+  <div class="card-header bg-light border-0 px-4 py-3">
+    <h6 class="mb-0">Price</h6>
+  </div>
+  <div class="card-body px-4 py-3">
+    <input type="range" class="form-range" min="0" max="100">
+    <div class="row mb-2">
+      <div class="col-6">
+        <label for="min" class="form-label">Min</label>
+        <input class="form-control form-control-sm" id="min" placeholder="$0" type="number">
+      </div>
+
+      <div class="col-6">
+        <label for="max" class="form-label">Max</label>
+        <input class="form-control form-control-sm" id="max" placeholder="$1,0000" type="number">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="card border-0 shadow-sm mb-4">
+  <div class="card-header bg-light border-0 px-4 py-3">
+    <h6 class="mb-0">Search</h6>
+  </div>
+  <div class="card-body px-4 py-3">
+    <input type="search" class="form-control form-control-sm my-2" placeholder="Search..." aria-label="Search">
+  </div>
+</div>
+
+<div class="card border-0 shadow-sm mb-4">
+  <header class="card-body px-4 py-3">
+    <button class="btn btn-primary btn-sm w-100 my-2">Apply</button>
+    <button class="btn btn-warning btn-sm w-100 mb-2">Reset</button>
+  </header>
+</div>

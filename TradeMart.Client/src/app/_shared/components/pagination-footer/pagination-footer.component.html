@@ -1,0 +1,5 @@
+<ng-container *ngIf="pagination">
+    <ngb-pagination [collectionSize]="pagination.totalCount" [(page)]="pagination.currentPage" [maxSize]="3"
+        [pageSize]="pagination.pageSize" (pageChange)="onPageChanged()" [ellipses]="true" [rotate]="true">
+    </ngb-pagination>
+</ng-container>
