@@ -3,6 +3,57 @@
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
 
-.cursor-pointer{
+@font-face {
+    font-family: 'Roboto';
+    src: url(assets/fonts/Roboto/Roboto-Regular.ttf) format("truetype"),
+        url(assets/fonts/Roboto/Roboto-Bold.ttf) format("truetype");
+}
+
+
+/* Light */
+@font-face {
+    font-family: 'Roboto';
+    src: url(assets/fonts/Roboto/Roboto-Light.ttf) format('truetype');
+    font-style: normal;
+    font-weight: 300;
+}
+
+/* Normal */
+@font-face {
+    font-family: 'Roboto';
+    src: url(assets/fonts/Roboto/Roboto-Regular.ttf) format('truetype');
+    font-style: normal;    
+    font-weight: 400;
+}
+
+/* Medium */
+@font-face {
+    font-family: 'Roboto';
+    src: url(assets/fonts/Roboto/Roboto-Medium.ttf) format('truetype');
+    font-style: normal;
+    font-weight: 500;
+}
+
+/* Bold */
+@font-face {
+    font-family: 'Roboto';
+    src: url(assets/fonts/Roboto/Roboto-Bold.ttf) format('truetype');
+    font-style: normal;    
+    font-weight: 700;
+}
+
+/* Black */
+@font-face {
+    font-family: 'Roboto';
+    src: url(assets/fonts/Roboto/Roboto-Black.ttf) format('truetype');
+    font-style: normal;
+    font-weight: 900;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.cursor-pointer {
     cursor: pointer;
 }
