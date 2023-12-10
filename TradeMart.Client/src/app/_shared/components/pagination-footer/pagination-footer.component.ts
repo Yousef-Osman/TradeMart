@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { IPagination } from '../../interfaces/ipagination';
 
 @Component({
   selector: 'app-pagination-footer',
@@ -6,13 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './pagination-footer.component.scss'
 })
 export class PaginationFooterComponent {
-  pagination: any = {
-    totalCount: 24,
-    currentPage: 1,
-    pageSize: 12,
-  }
+  @Input() pagination!: IPagination;
+  @Output() pageNumberEmitter = new EventEmitter<number>();
 
   onPageChanged(){
-    
+    this.pageNumberEmitter.emit(this.pagination?.currentPage);
   }
 }

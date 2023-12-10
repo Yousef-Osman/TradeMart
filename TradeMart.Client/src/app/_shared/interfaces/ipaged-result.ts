@@ -1,7 +1,5 @@
-export interface IPagedResult<T> {
-    currentPage: number;
-    totalPages: number;
-    pageSize: number;
-    totalCount: number;
+import { IPagination } from "./ipagination";
+
+export interface IPagedResult<T> extends IPagination {
     data: T[];
 }

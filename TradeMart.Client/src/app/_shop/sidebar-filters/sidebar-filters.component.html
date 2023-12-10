@@ -1,49 +1,29 @@
-<div class="card border-0 shadow-sm mb-4">
+<div class="card border-0 shadow-sm mb-4" *ngIf="categories">
   <div class="card-header bg-light border-0 px-4 py-3">
     <h6 class="mb-0">Categories</h6>
   </div>
   <div class="card-body px-4 py-3">
     <ul class="list-group">
-      <li class="list-group-item list-group-item-action rounded-1 border-0">PC</li>
-      <li class="list-group-item list-group-item-action rounded-1 border-0">Laptop</li>
-      <li class="list-group-item list-group-item-action rounded-1 border-0">PlayStation</li>
-      <li class="list-group-item list-group-item-action rounded-1 border-0">Mobile</li>
-      <li class="list-group-item list-group-item-action rounded-1 border-0">Watch</li>
-      <li class="list-group-item list-group-item-action rounded-1 border-0">Accessories</li>
+      <li class="list-group-item list-group-item-action rounded-1 border-0 cursor-pointer" 
+      *ngFor="let category of categories" 
+      [class.active]="category.id == filterParams.category"
+      (click)="onCategoryChange(category.id)">{{category.name}}</li>
     </ul>
   </div>
 </div>
 
-<div class="card border-0 shadow-sm mb-4">
+<div class="card border-0 shadow-sm mb-4" *ngIf="brands">
   <div class="card-header bg-light border-0 px-4 py-3">
     <h6 class="mb-0">Brands</h6>
   </div>
   <div class="card-body px-4 py-3">
-    <label class="form-check mb-2">
-      <input class="form-check-input" type="checkbox">
-      <span class="form-check-label link-label">Lenovo</span>
-      <b class="badge rounded-pill bg-gray-dark float-end">{{120}}</b>
-    </label>
-    <label class="form-check mb-2">
-      <input class="form-check-input" type="checkbox">
-      <span class="form-check-label link-label">Dell</span>
-      <b class="badge rounded-pill bg-gray-dark float-end">{{120}}</b>
-    </label>
-    <label class="form-check mb-2">
-      <input class="form-check-input" type="checkbox">
-      <span class="form-check-label link-label">Apple</span>
-      <b class="badge rounded-pill bg-gray-dark float-end">{{120}}</b>
-    </label>
-    <label class="form-check mb-2">
-      <input class="form-check-input" type="checkbox">
-      <span class="form-check-label link-label">Samsung</span>
-      <b class="badge rounded-pill bg-gray-dark float-end">{{120}}</b>
-    </label>
-    <label class="form-check mb-2">
-      <input class="form-check-input" type="checkbox">
-      <span class="form-check-label link-label">Hp</span>
-      <b class="badge rounded-pill bg-gray-dark float-end">{{120}}</b>
-    </label>
+    <div class="form-check mb-2" *ngFor="let brand of brands">
+      <input class="form-check-input" type="checkbox"  value="{{brand.id}}" (click)="onBrandClick($event.target)" id="{{brand.id}}">
+      <label class="form-check-label d-flex link-label" for="{{brand.id}}">
+        {{brand.name}}
+        <!-- <p class="badge rounded-pill bg-secondary ms-auto">120</p> -->
+      </label>
+    </div>
   </div>
 </div>
 
@@ -79,7 +59,7 @@
 
 <div class="card border-0 shadow-sm mb-4">
   <header class="card-body px-4 py-3">
-    <button class="btn btn-primary btn-sm w-100 my-2">Apply</button>
-    <button class="btn btn-warning btn-sm w-100 mb-2">Reset</button>
+    <button class="btn btn-primary btn-sm w-100 my-2" (click)="applyFilters()">Apply</button>
+    <button class="btn btn-warning btn-sm w-100 mb-2" (click)="resetFilters()">Reset</button>
   </header>
 </div>

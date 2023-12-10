@@ -4,7 +4,7 @@
     <div class="row">
       <!-- sidebar filters -->
       <aside class="col-12 col-md-3" style="max-width: 20%;">
-        <app-sidebar-filters></app-sidebar-filters>
+        <app-sidebar-filters (filtersEmitter)="setFilters($event)"></app-sidebar-filters>
       </aside>
 
       <main class="col-lg-9" style="flex-grow: 1">
@@ -35,13 +35,9 @@
 
         <!-- pagination footer -->
         <div class="d-flex justify-content-center align-items-center mt-4">
-          <app-pagination-footer></app-pagination-footer>
+          <app-pagination-footer *ngIf="pagination" [pagination]="pagination" 
+          (pageNumberEmitter)="onParentPageChanged($event)"></app-pagination-footer>
         </div>
-        <!-- <div class="d-flex justify-content-center align-items-center mt-4">
-          <app-pagination-footer *ngIf="pagination" [pagination]="pagination"
-            (pageNumberEmitter)="onParentPageChanged($event)">
-          </app-pagination-footer>
-        </div> -->
       </main>
     </div>
   </div>
