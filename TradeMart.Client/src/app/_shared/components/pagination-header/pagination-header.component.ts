@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-pagination-header',
@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './pagination-header.component.scss'
 })
 export class PaginationHeaderComponent {
-  currentPage?: number = 1;
-  pageSize?: number = 12;
-  totalCount?: number = 24;
+  @Input() currentPage!: number;
+  @Input() pageSize!: number;
+  @Input() totalCount!: number;
 }

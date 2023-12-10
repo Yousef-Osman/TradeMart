@@ -33,9 +33,11 @@
 
         <hr>
 
-        <!-- pagination footer -->
-        <div class="d-flex justify-content-center align-items-center mt-4">
-          <app-pagination-footer *ngIf="pagination" [pagination]="pagination" 
+        <!-- pagination -->
+        <div class="d-flex justify-content-between align-items-center">
+          <app-pagination-header *ngIf="pagination" [currentPage]="pagination.currentPage"
+          [pageSize]="pagination.pageSize" [totalCount]="pagination.totalCount"></app-pagination-header>
+          <app-pagination-footer style="margin-bottom: -16px;" *ngIf="pagination" [pagination]="pagination" 
           (pageNumberEmitter)="onParentPageChanged($event)"></app-pagination-footer>
         </div>
       </main>
