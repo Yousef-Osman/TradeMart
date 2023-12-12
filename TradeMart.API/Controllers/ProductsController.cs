@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using TradeMart.Application.Interfaces.Repositories;
 using TradeMart.Application.Models.Pagination;
 using TradeMart.Domian.Entities;
@@ -52,27 +53,55 @@ public class ProductsController : ControllerBase
         return Ok(product);
     }
 
-    [HttpGet("brands")]
-    public async Task<IActionResult> GetBrands()
-    {
-        return Ok(await _brandRepo.GetAllAsync());
-    }
-
     [HttpGet("brands/{id}")]
     public async Task<IActionResult> GetBrand(string id)
     {
-        return Ok(await _brandRepo.GetByIdAsync(id));
+        var brand = await _brandRepo.GetByIdAsync(id);
+        brand.ImageUrl = _config["ApiUrl"] + brand.ImageUrl;
+        return Ok(brand);
     }
 
-    [HttpGet("categories")]
-    public async Task<IActionResult> GetCategories()
+    [HttpGet("brands")]
+    public async Task<IActionResult> GetBrands()
     {
-        return Ok(await _categoryRepo.GetAllAsync());
+        var data = await _brandRepo.GetDataQuery().Select(a => new {
+            a.Id,
+            a.Name,
+            ImageUrl = _config["ApiUrl"] + a.ImageUrl
+        }).ToListAsync();
+        return Ok(data);
+    }
+
+    [HttpGet("brands/names")]
+    public async Task<IActionResult> GetBrandsNames()
+    {
+        var data = await _brandRepo.GetDataQuery().Select(a=>new {a.Id, a.Name}).ToListAsync();
+        return Ok(data);
     }
 
     [HttpGet("categories/{id}")]
     public async Task<IActionResult> GetCategory(string id)
     {
-        return Ok(await _categoryRepo.GetByIdAsync(id));
+        var category = await _categoryRepo.GetByIdAsync(id);
+        category.ImageUrl = _config["ApiUrl"] + category.ImageUrl;
+        return Ok(category);
+    }
+
+    [HttpGet("categories")]
+    public async Task<IActionResult> GetCategories()
+    {
+        var data = await _categoryRepo.GetDataQuery().Select(a => new { 
+            a.Id, 
+            a.Name,
+            ImageUrl = _config["ApiUrl"] + a.ImageUrl
+        }).ToListAsync();
+        return Ok(data);
+    }
+
+    [HttpGet("categories/Names")]
+    public async Task<IActionResult> GetCategoriesNames()
+    {
+        var data = await _categoryRepo.GetDataQuery().Select(a => new { a.Id, a.Name }).ToListAsync();
+        return Ok(data);
     }
 }
