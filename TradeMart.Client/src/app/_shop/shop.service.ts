@@ -22,11 +22,11 @@ export class ShopService {
   }
 
   getCategories() {
-    return this.http.get<ICategory[]>(this.baseUrl + '/categories');
+    return this.http.get<ICategory[]>(this.baseUrl + '/categories/names');
   }
 
   getBrands() {
-    return this.http.get<IBrand[]>(this.baseUrl + '/brands');
+    return this.http.get<IBrand[]>(this.baseUrl + '/brands/names');
   }
 
   setHttpParams(productParams: ProductParams) {

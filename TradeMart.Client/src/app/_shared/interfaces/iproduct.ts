@@ -6,4 +6,5 @@ export interface IProduct {
     imageUrl: string;
     brand: string;
     category: string;
+    lastModified: Date;
 }

@@ -15,7 +15,7 @@
           prebuilt components, and powerful JavaScript plugins.
         </p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          <button type="button" class="btn btn-warning px-4">
+          <button type="button" class="btn btn-warning px-4" routerLink="/shop">
             Start Shopping
           </button>
         </div>
@@ -30,14 +30,14 @@
       <h3 class="mb-1">Shop By Categories</h3>
       <p class="text-muted text-sm">Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
     </header>
-    <div class="row row-cols-3 row-cols-md-4 row-cols-lg-5 g-4 text-center">
-      <div class="col" *ngFor="let category of categories">
-        <div class="categories-item card h-100 border-0 shadow hover-transition">
+    <div class="row row-cols-3 row-cols-md-4 row-cols-lg-5 g-4 text-center" *ngIf="categories">
+      <div class="col" *ngFor="let category of categories" (click)="getProductsByCategory(category.id)">
+        <div class="item-hover category-item card h-100 border-0 shadow hover-transition">
           <div class="card-body p-4">
             <div class="mb-3">
-                <img style="max-height: 150px; max-width: 100%;" src="{{category}}">
+                <img style="max-height: 150px; max-width: 100%;" src="{{category.imageUrl}}">
             </div>
-            <h5><a>Category Name</a></h5>
+            <h5><a>{{category.name}}</a></h5>
           </div>
         </div>
       </div>
@@ -51,14 +51,14 @@
         <h3 class="mb-1">Shop By Brands</h3>
         <p class="text-muted text-sm">Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
       </header>
-      <div class="row row-cols-3 row-cols-md-4 row-cols-lg-6 g-4 text-center">
-        <div class="col" *ngFor="let brand of brands">
-          <div class="card h-100 border-0 shadow hover-transition">
+      <div class="row row-cols-3 row-cols-md-4 row-cols-lg-6 g-4 text-center" *ngIf="brands">
+        <div class="col" *ngFor="let brand of brands" (click)="getProductsByBrand(brand.id)">
+          <div class="item-hover brand-item card h-100 border-0 shadow hover-transition">
             <div class="card-body p-4">
               <div class="mb-3">
-                  <img class="col-12" src="{{brand}}">
+                  <img class="col-12" src="{{brand.imageUrl}}">
               </div>
-              <h5><a>Brand Name</a></h5>
+              <h5><a>{{brand.name}}</a></h5>
             </div>
           </div>
         </div>
@@ -74,31 +74,25 @@
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
       </p>
     </header>
-    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4">
-      <div class="col-6 col-md-4 col-lg-3" *ngFor="let product of brands">
-        <div class="card border-0 shadow hover-transition">
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4" *ngIf="products">
+      <div class="col-6 col-md-4 col-lg-3" *ngFor="let product of products">
+        <div class="card h-100 border-0 shadow hover-transition">
           <a href="#!">
-            <img class="card-img-top img-fluid"src="https://d19m59y37dris4.cloudfront.net/listings/2-0/img/blog-1.bfc29386.jpg"alt="..."/>
+            <img class="card-img-top" src="{{product.imageUrl}}"/>
         </a>
           <div class="card-body p-4">
-            <p class="text-sm text-muted mb-2">11 February, 2020</p>
+            <p class="text-sm text-muted mb-2">{{product.lastModified | date: 'd MMMM, y'}}</p>
             <h3 class="h5">
-              <a class="stretched-link reset-anchor" href="#!"
-                >How To Get More Reviews For Your Startup Product</a
-              >
+              <a class="stretched-link reset-anchor line-clamp-1" href="#!">{{product.name}}</a>
             </h3>
-            <p class="text-sm text-muted">
-              The quality of customer service can make or break a buyer’s
-              relationship with the seller. According to the 2017 Customer
-              Service Barometer...
-            </p>
+            <p class="text-sm text-muted line-clamp-3">{{product.description}}</p>
             <span class="text-primary">Read more</span>
           </div>
         </div>
       </div>
     </div>
     <div class="col-lg-12 text-center pt-4">
-        <a class="btn btn-outline-secondary px-4 py-2" href="#!">Show all products</a>
+        <a class="btn btn-outline-secondary px-4 py-2" routerLink="/shop">Show all products</a>
     </div>
   </div>
 </section>

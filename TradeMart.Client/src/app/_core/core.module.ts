@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -19,6 +20,7 @@ import { HomeComponent } from './components/home/home.component';
   imports: [
     CommonModule,
     RouterModule,
+    HttpClientModule,
     NgbModule
   ],
   exports:[

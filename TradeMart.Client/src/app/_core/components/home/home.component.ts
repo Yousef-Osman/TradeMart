@@ -1,36 +1,53 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HomeService } from '../../home.service';
+import { IBrand } from '../../../_shared/interfaces/ibrand';
+import { ICategory } from '../../../_shared/interfaces/icategory';
+import { IProduct } from '../../../_shared/interfaces/iproduct';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent {
-  brands: string[] = [
-    './assets/images/site/brands/lenovo.png',
-    './assets/images/site/brands/dell.png',
-    './assets/images/site/brands/hp.png',
-    './assets/images/site/brands/toshiba.png',
-    './assets/images/site/brands/asus.png',
-    './assets/images/site/brands/apple.png',
-    './assets/images/site/brands/fujitsu.png',
-    './assets/images/site/brands/samsung.png',
-    './assets/images/site/brands/acer.png',
-    './assets/images/site/brands/canon.png',
-    './assets/images/site/brands/sony.png',
-    './assets/images/site/brands/xiaomi.png',
-  ];
+export class HomeComponent implements OnInit {
+  brands!: IBrand[];
+  categories!: ICategory[];
+  products!: IProduct[];
 
-  categories: string[] = [
-    './assets/images/site/categories/pc.png',
-    './assets/images/site/categories/laptop.png',
-    './assets/images/site/categories/tv.png',
-    './assets/images/site/categories/phone.png',
-    './assets/images/site/categories/camera.png',
-    './assets/images/site/categories/tablet.png',
-    './assets/images/site/categories/headphone.png',
-    './assets/images/site/categories/playstration.png',
-    './assets/images/site/categories/watch.png',
-    './assets/images/site/categories/accessories.png',
-  ];
+  constructor(private homeService: HomeService) { }
+
+  ngOnInit(): void {
+    this.getCategories();
+    this.getBrands();
+    this.getProducts();
+  }
+
+  getCategories(){
+    this.homeService.getCategories().subscribe({
+      next: response => this.categories = response,
+      error: error => alert(error),
+    });
+  }
+
+  getBrands(){
+    this.homeService.getBrands().subscribe({
+      next: response => this.brands = response,
+      error: error => alert(error),
+    });
+  }
+
+  getProducts(){
+    this.homeService.getLatestProducts().subscribe({
+      next: response => this.products = response.data,
+      error: error => alert(error),
+    });
+  }
+
+  getProductsByCategory(id:string){
+
+  }
+
+  getProductsByBrand(id:string){
+
+  }
 }

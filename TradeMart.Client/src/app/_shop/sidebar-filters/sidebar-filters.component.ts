@@ -24,14 +24,14 @@ export class SidebarFiltersComponent implements OnInit {
 
   getCategories(){
     this.shopService.getCategories().subscribe({
-      next: data => this.categories = data,
+      next: response => this.categories = response,
       error: error => alert(error),
     });
   }
 
   getBrands(){
     this.shopService.getBrands().subscribe({
-      next: data => this.brands = data,
+      next: response => this.brands = response,
       error: error => alert(error),
     });
   }
