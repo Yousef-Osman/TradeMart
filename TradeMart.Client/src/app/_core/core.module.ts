@@ -7,6 +7,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 
@@ -21,13 +22,15 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     RouterModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    NgxSpinnerModule
   ],
   exports:[
     NavbarComponent,
     HomeComponent,
     NotFoundComponent,
-    FooterComponent
+    FooterComponent,
+    NgxSpinnerModule
   ]
 })
 export class CoreModule { }
