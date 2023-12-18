@@ -27,6 +27,7 @@ builder.Services.AddSingleton<IConnectionMultiplexer>(c =>
 
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IShoppingCartRepository, ShoppingCartRepository>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
