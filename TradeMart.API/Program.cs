@@ -1,6 +1,6 @@
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using StackExchange.Redis;
 using System.Net;
 using TradeMart.API.Middlewares;
 using TradeMart.Application.Interfaces.Repositories;
@@ -10,11 +10,20 @@ using TradeMart.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+//add services to the container.
 var config = builder.Configuration;
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(connectionString));
+var defaultConnectionString = config.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string not found.");
+var redisConnectionString = config.GetConnectionString("RedisConnection") ?? throw new InvalidOperationException("Connection string not found.");
+
+//add database files 
+builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(defaultConnectionString));
+
+//to add redis database
+builder.Services.AddSingleton<IConnectionMultiplexer>(c =>
+{
+    var configuration = ConfigurationOptions.Parse(redisConnectionString, true);
+    return ConnectionMultiplexer.Connect(configuration);
+});
 
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
@@ -44,13 +53,13 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
 
 var app = builder.Build();
 
-//Global Exception handling Middleware
+//global Exception handling Middleware
 app.UseMiddleware<ExceptionMiddleware>();
 
-//To handle "Not Found Endpoint" redirect to "ErrorController" and pass status code {0}
+//to handle "Not Found Endpoint" redirect to "ErrorController" and pass status code {0}
 app.UseStatusCodePagesWithReExecute("/errors/{0}");
 
-// Configure the HTTP request pipeline.
+//configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
