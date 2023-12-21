@@ -23,9 +23,10 @@ public class ProductRepository : GenericRepository<Product>, IProductRepository
             .Include(a => a.Brand)
             .Include(a => a.Categories)
             .ThenInclude(b => b.Category)
-            .AsNoTracking()
+            .Where(a => a.Id == id)
             .Select(a => a.ToProductDto())
-            .FirstOrDefaultAsync(a => a.Id == id);
+            .AsNoTracking()
+            .FirstOrDefaultAsync();
     }
 
     public async Task<PagedResult<ProductDTO>> GetProductsAsync(ProductParams productParams)
