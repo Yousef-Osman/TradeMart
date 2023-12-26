@@ -1,0 +1,84 @@
+<section class="bg-light py-5">
+    <div class="container-fluid col-12 col-lg-11" *ngIf="product">
+        <div class="row gx-5">
+            <aside class="col-lg-6">
+                <div class="mb-3 d-flex justify-content-center">
+                    <img style="max-width: 100%; max-height: 500px; margin: auto;" class="border rounded-4 fit" [src]="product.imageUrl" />
+                </div>
+                <!-- <div class="d-flex justify-content-center mb-3">
+                    <a class="border mx-1 rounded-2" *ngFor="let image of product.images" (click)="changeImage(image)">
+                        <img width="60" height="60" class="rounded-2" [src]="image" />
+                    </a>
+                </div> -->
+            </aside>
+            <main class="col-lg-6">
+                <div class="ps-lg-3">
+                    <h4 class="title text-dark">
+                        {{product.name}}
+                    </h4>
+                    <div class="d-flex flex-row my-3">
+                        <div class="text-warning mb-1 me-2">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="ms-1">
+                                <!-- {{product.rating}} -->
+                            </span>
+                        </div>
+                        <!-- <span class="text-muted"><i class="fas fa-shopping-basket fa-sm mx-1"></i>154 orders</span> -->
+                        <span class="text-success ms-2" *ngIf="product.stock > 0">In stock</span>
+                    </div>
+
+                    <div class="mb-3">
+                        <span class="h5">{{product.price | currency}}</span>
+                    </div>
+
+                    <p>
+                        {{product.description}}
+                    </p>
+
+                    <div class="row">
+                        <dt class="col-3">Category</dt>
+                        <dd class="col-9">{{product.category}}</dd>
+
+                        <dt class="col-3">Brand</dt>
+                        <dd class="col-9">{{product.brand}}</dd>
+                    </div>
+
+                    <hr />
+
+                    <div class="row">
+                        <div class="col-md-4 col-6">
+                            <label class="mb-2 d-block">Quantity</label>
+                            <div class="input-group mb-3" style="width: 170px;">
+                                <button class="btn btn-white border border-secondary px-3" type="button"
+                                    id="button-addon1" data-mdb-ripple-color="dark">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <input type="text" class="form-control text-center border border-secondary"
+                                    placeholder="14" aria-label="Example text with button addon"
+                                    aria-describedby="button-addon1" />
+                                <button class="btn btn-white border border-secondary px-3" type="button"
+                                    id="button-addon2" data-mdb-ripple-color="dark">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <a href="#" class="btn btn-warning"> Buy now </a>
+                        <a href="#" class="btn btn-primary mx-1"> Add to cart</a>
+                    </div>
+
+                    <hr />
+
+                    <div class="mt-4">
+                        <a routerLink="/" class="btn btn-outline-secondary px-4">Go Back</a>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</section>

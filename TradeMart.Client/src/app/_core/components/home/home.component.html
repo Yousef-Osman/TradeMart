@@ -75,15 +75,15 @@
       </p>
     </header>
     <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4" *ngIf="products">
-      <div class="col-6 col-md-4 col-lg-3" *ngFor="let product of products">
+      <div class="col-6 col-md-4 col-lg-3" *ngFor="let product of products" [routerLink]="['/shop/', product.id]">
         <div class="card h-100 border-0 shadow hover-transition">
-          <a href="#!">
+          <a>
             <img class="card-img-top" src="{{product.imageUrl}}"/>
         </a>
           <div class="card-body p-4">
             <p class="text-sm text-muted mb-2">{{product.lastModified | date: 'd MMMM, y'}}</p>
             <h3 class="h5">
-              <a class="stretched-link reset-anchor line-clamp-1" href="#!">{{product.name}}</a>
+              <a class="stretched-link reset-anchor line-clamp-1">{{product.name}}</a>
             </h3>
             <p class="text-sm text-muted line-clamp-3">{{product.description}}</p>
             <span class="text-primary">Read more</span>

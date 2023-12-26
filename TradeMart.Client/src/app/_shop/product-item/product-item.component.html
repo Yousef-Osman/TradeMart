@@ -1,4 +1,4 @@
-<div class="card h-100 border-0 shadow-sm" *ngIf="product">
+<div class="card h-100 border-0 shadow-sm" *ngIf="product" [routerLink]="['/shop/', product.id]">
   <div class="image position-relative overflow-hidden cursor-pointer">
     <img src="{{product.imageUrl}}" class="card-img-top">
     <ul class="d-flex align-items-end justify-content-center list-unstyled hover-overlay">
